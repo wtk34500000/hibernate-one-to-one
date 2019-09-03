@@ -100,12 +100,4 @@ public class Instructor {
 		return "Instructor [id=" + id + ", firstName=" + firstName + ", LastName=" + LastName + ", email=" + email
 				+ ", instructorDetail=" + instructorDetail + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 }	

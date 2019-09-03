@@ -14,7 +14,6 @@ public class InstructorDetail {
 	
 	//define the fields
 	
-	
 	//annotate the fields with db column name
 	
 	//create constructors
@@ -22,6 +21,7 @@ public class InstructorDetail {
 	//gettting and setting
 	
 	//generate tostring() method
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -70,6 +70,5 @@ public class InstructorDetail {
 	public String toString() {
 		return "InstructorDetail [id=" + id + ", youtubeChannel=" + youtubeChannel + ", hobby=" + hobby + "]";
 	}
-	
 	
 }
