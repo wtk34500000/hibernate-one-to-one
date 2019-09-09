@@ -7,7 +7,7 @@ import org.hibernate.cfg.Configuration;
 import com.hibernate.demo.entity.Instructor;
 import com.hibernate.demo.entity.InstructorDetail;
 
-public class CreateDemo {
+public class DeleteDemo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -22,27 +22,18 @@ public class CreateDemo {
         Session session = factory.getCurrentSession();
         
         try {           
-            // create the objects
-//        	Instructor tempInstructor = new Instructor("wei", "wei", "wei@gmail.com");
-//        	
-//        	InstructorDetail  tempInstructorDetail = new InstructorDetail("http:wwwgsdfsdfsdf","my hobby is ...");
-//        	
-//        	tempInstructor.setInstructorDetail(tempInstructorDetail);
-        	
-        	Instructor tempInstructor = new Instructor("jun", "jun", "jun@gmail.com");
-        	
-        	InstructorDetail  tempInstructorDetail = new InstructorDetail("http:wwwgsdfsdfsdf","my hobby is ...");
-        	
-        	tempInstructor.setInstructorDetail(tempInstructorDetail);
-        	
             
-            // start a transaction
-        	System.out.println("Saving instructor: "+ tempInstructor);
             session.beginTransaction();
             
-            // save the instructor
-            session.save(tempInstructor);
+            int id = 1;
             
+            //get the instructor by id
+            Instructor tempInstructor = session.get(Instructor.class, id);
+            
+            //delete the instructor
+            if(tempInstructor != null) {
+            	session.delete(tempInstructor);
+            }
             
             // commit transaction
             session.getTransaction().commit(); 
